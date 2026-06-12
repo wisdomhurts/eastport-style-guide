@@ -9,3 +9,5 @@ Thumbs.db
 # logs
 npm-debug.log*
 *.log
+
+.vercel
