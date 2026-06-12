@@ -77,17 +77,6 @@
   @keyframes cue{0%{transform:translateX(-14px);}60%,100%{transform:translateX(40px);}}
   @media (prefers-reduced-motion:reduce){.scrollcue .line::after{animation:none;}}
 
-  /* ---------- CONTENTS ---------- */
-  .contents{padding:clamp(70px,12vh,138px) 0;}
-  .toc{border-top:1px solid var(--line);margin-top:38px;}
-  .toc a{display:grid;grid-template-columns:var(--rail) 1fr auto;gap:28px;align-items:baseline;padding:25px 0;border-bottom:1px solid var(--line);transition:padding-left .32s var(--ease-out),background .3s;}
-  .toc a:hover{padding-left:14px;}
-  .toc .f{font-family:var(--font-mono);font-size:13px;color:var(--mute);}
-  .toc a:hover .f{color:var(--azure);}
-  .toc .t{font-family:var(--font-display);font-weight:700;font-size:clamp(23px,3vw,33px);letter-spacing:-0.02em;color:var(--navy);}
-  .toc .d{font-size:13px;color:var(--steel);text-align:right;max-width:36ch;line-height:1.5;}
-  @media (max-width:760px){.toc a{grid-template-columns:46px 1fr;gap:14px;}.toc .d{display:none;}}
-
   /* ---------- CHAPTER STRUCTURE ---------- */
   .chapter{padding:clamp(76px,12vh,144px) 0;border-top:1px solid var(--line);}
   .chapter--tint{background:var(--ice);}
@@ -381,7 +370,7 @@
   </svg>
 </template>
 
-<a href="#contents" class="skip-link">Skip to contents</a>
+<a href="#ch01" class="skip-link">Skip to content</a>
 
 <!-- ============ RUNNING HEAD ============ -->
 <div class="runhead">
@@ -427,25 +416,6 @@
     </div>
   </div>
 </header>
-
-<!-- ============ CONTENTS ============ -->
-<section class="contents" id="contents">
-  <div class="wrap">
-    <span class="kicker kicker--az" data-reveal>Contents</span>
-    <div class="toc" data-reveal>
-      <a href="#ch01"><span class="f">01</span><span class="t">Foundation</span><span class="d">Positioning, register and the discipline behind every decision.</span></a>
-      <a href="#ch02"><span class="f">02</span><span class="t">Logo</span><span class="d">The dawn-fan mark, lockups, clear space and misuse.</span></a>
-      <a href="#ch03"><span class="f">03</span><span class="t">Color</span><span class="d">The blue spectrum, cool neutrals, the usage law and the commodity palette.</span></a>
-      <a href="#ch04"><span class="f">04</span><span class="t">Typography</span><span class="d">Three voices — Montserrat display, Source Sans UI, Source Code Pro data.</span></a>
-      <a href="#ch05"><span class="f">05</span><span class="t">Voice &amp; Tone</span><span class="d">How we sound: investor-grade, specific, never hype.</span></a>
-      <a href="#ch06"><span class="f">06</span><span class="t">Space &amp; Elevation</span><span class="d">The 4pt grid, crisp radii and a soft cool shadow system.</span></a>
-      <a href="#ch07"><span class="f">07</span><span class="t">Components</span><span class="d">Buttons, tickers, tags, fields, KPIs and the project index.</span></a>
-      <a href="#ch08"><span class="f">08</span><span class="t">Reversed &amp; Data UI</span><span class="d">The system on Navy — the institutional data register.</span></a>
-      <a href="#ch09"><span class="f">09</span><span class="t">Motion &amp; Moments</span><span class="d">The spectrum and fan, used as atmosphere not decoration.</span></a>
-      <a href="#ch10"><span class="f">10</span><span class="t">Accessibility</span><span class="d">Contrast, focus and reduced motion — part of the system.</span></a>
-    </div>
-  </div>
-</section>
 
 <!-- ============ 01 FOUNDATION ============ -->
 <section class="chapter" id="ch01">
