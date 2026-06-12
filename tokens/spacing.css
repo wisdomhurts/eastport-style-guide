@@ -1,0 +1,56 @@
+/* ============================================================
+   EASTPORT CRITICAL METALS — Spacing, Radii, Elevation, Motion
+   ------------------------------------------------------------
+   4pt base grid. Crisp corporate radii. Soft cool-navy shadows.
+   Calm functional motion — no bounce, no spring.
+   ============================================================ */
+
+:root {
+  /* ---- SPACING (4pt) -------------------------------------- */
+  --space-2xs: 4px;
+  --space-xs:  8px;
+  --space-sm:  12px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+  --space-5xl: 128px;
+
+  /* page rhythm */
+  --page-max:   1240px;
+  --page-gutter:40px;
+  --section-y:  96px;   /* desktop vertical section padding */
+
+  /* ---- RADII --------------------------------------------- */
+  --radius-xs:  4px;    /* tags, badges                       */
+  --radius-sm:  6px;    /* buttons, inputs, nav CTA           */
+  --radius-md:  10px;   /* small cards, image thumbs          */
+  --radius-lg:  14px;   /* cards, panels                      */
+  --radius-xl:  20px;   /* feature cards, media               */
+  --radius-pill:999px;  /* pills, stage chips, avatars        */
+
+  /* ---- BORDERS ------------------------------------------- */
+  --hairline: 1px solid var(--line);
+  --rule:     1px solid var(--border-strong);
+
+  /* ---- ELEVATION (cool navy-tinted, two tiers) ----------- */
+  --shadow-card:
+    0 1px 2px rgba(14,33,56,0.04),
+    0 4px 14px rgba(14,33,56,0.06),
+    0 1px 3px rgba(14,33,56,0.03);
+  --shadow-deep:
+    0 2px 4px rgba(14,33,56,0.05),
+    0 10px 24px rgba(14,33,56,0.10),
+    0 24px 48px rgba(14,33,56,0.10);
+  --shadow-azure:
+    0 6px 18px rgba(21,106,248,0.22);  /* under azure CTA on hover */
+
+  /* ---- MOTION -------------------------------------------- */
+  --ease-out:  cubic-bezier(.2,.8,.2,1);   /* @kind other */
+  --ease-soft: cubic-bezier(.33,1,.68,1);  /* @kind other */
+  --dur-fast: 0.16s;  /* @kind other */
+  --dur-base: 0.24s;  /* @kind other */
+  --dur-slow: 0.4s;   /* @kind other */
+}

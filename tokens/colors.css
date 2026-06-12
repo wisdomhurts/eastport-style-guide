@@ -1,0 +1,69 @@
+/* ============================================================
+   EASTPORT CRITICAL METALS — Color Tokens
+   ------------------------------------------------------------
+   The brand is a spectrum of blues lifted straight from the
+   logo's radiating "dawn" fan: Navy → Marine → Azure → Sky →
+   Mist. Neutrals are cool-tinted; white space does the work.
+   Azure is the energy accent — rationed, ~"earned not decor".
+   ============================================================ */
+
+:root {
+  /* ---- BRAND SPECTRUM (the fan, dark → light) -------------- */
+  --navy:    #04214E;   /* deepest blade · primary dark · wordmark · type */
+  --marine:  #1140AA;   /* royal blade · secondary brand blue             */
+  --azure:   #156AF8;   /* bright blade · the energy accent · links/active */
+  --sky:     #68ABFC;   /* light blade · highlights, hover tints           */
+  --mist:    #B9D8FD;   /* faintest blade · soft fills, chart tints        */
+
+  /* Deeper/lighter stops for surfaces & states */
+  --navy-900: #021737;  /* near-black navy — dark panels, footers          */
+  --navy-700: #0A2C5E;  /* navy hover / gradient partner                   */
+  --azure-600:#0F57D6;  /* azure pressed                                   */
+  --ice:      #EAF1FB;  /* tinted section background (cool wash)           */
+  --ice-deep: #DCE8F8;  /* slightly deeper wash / chip fills               */
+
+  /* ---- NEUTRALS (cool, institutional) --------------------- */
+  --ink:      #0E2138;  /* primary heading ink (navy-black)                */
+  --slate:    #3E4F63;  /* body copy                                       */
+  --steel:    #6B7B8F;  /* secondary / muted text (passes 4.5:1 on white)  */
+  --mute:     #93A0B0;  /* lightest text allowed · meta                    */
+  --line:     #DCE4EF;  /* 1px hairline rules / borders                    */
+  --line-soft:#EAEEF4;  /* faintest divider                                */
+  --cloud:    #F6F9FC;  /* page background (near-white, cool)              */
+  --surface:  #FFFFFF;  /* elevated cards, panels (pure white)             */
+
+  /* ---- SEMANTIC ALIASES ----------------------------------- */
+  --bg:            var(--cloud);
+  --bg-section:    var(--ice);
+  --bg-dark:       var(--navy);
+  --text:          var(--slate);
+  --text-strong:   var(--ink);
+  --text-muted:    var(--steel);
+  --text-on-dark:  #DCE7F5;
+  --heading:       var(--navy);
+  --link:          var(--azure);
+  --border:        var(--line);
+  --border-strong: #C3D0E0;
+  --accent:        var(--azure);
+  --focus-ring:    rgba(21,106,248,0.28);
+
+  /* ---- STATUS (project stage / signals) ------------------- */
+  --stage-resource: #1140AA;  /* resource / post-discovery  */
+  --stage-drilling: #156AF8;  /* active drilling            */
+  --stage-explore:  #68ABFC;  /* discovery / exploration    */
+  --positive:       #2E8B57;  /* up / on-track              */
+  --warning:        #C08A2E;  /* caution                    */
+
+  /* ============================================================
+     COMMODITY DATA PALETTE  — maps, charts, project tags only.
+     Kept separate from UI blues so a figure never competes with
+     page chrome. One swatch per critical metal Eastport holds.
+     ============================================================ */
+  --cu:  #B26A3C;   /* Copper  — flagship Matsitama          */
+  --ni:  #6E8595;   /* Nickel  — steel grey                  */
+  --co:  #2C6FD6;   /* Cobalt  — cobalt blue                 */
+  --u:   #4E9E62;   /* Uranium — muted green (Foley)         */
+  --ree: #8E5DA8;   /* Rare Earths — lanthanide violet       */
+  --pge: #9AA3AC;   /* PGE / Platinum — platinum grey        */
+  --au:  #C9A24B;   /* Gold / showings — amber               */
+}

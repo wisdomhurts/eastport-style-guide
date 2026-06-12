@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Brand" name="Style Guide" subtitle="Full brand manual — cover, contents, 10 numbered chapters, colophon" viewport="1280x900" -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eastport Critical Metals — Brand &amp; Visual System</title>
+<link rel="icon" type="image/png" href="assets/logos/eastport-mark.png">
+<link rel="stylesheet" href="styles.css">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{margin:0;background:var(--cloud);color:var(--ink);font-family:var(--font-sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  ::selection{background:var(--mist);color:var(--navy);}
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;}
+
+  :root{
+    --mx: clamp(22px, 6vw, 100px);
+    --maxw: 1320px;
+    --measure: 62ch;
+    --rail: 132px;
+  }
+
+  .skip-link{position:absolute;top:-200px;left:16px;background:var(--navy);color:#fff;padding:12px 22px;border-radius:6px;font-size:13px;font-weight:600;z-index:999;transition:top .15s;}
+  .skip-link:focus{top:16px;}
+  a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--azure);outline-offset:3px;}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--mx);padding-right:var(--mx);}
+  .kicker{font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--steel);}
+  .kicker--az{color:var(--azure);}
+  .mono{font-family:var(--font-mono);}
+  .lede{font-size:clamp(18px,1.7vw,21px);line-height:1.6;color:var(--slate);max-width:var(--measure);}
+  .body{font-size:16px;line-height:1.62;color:var(--slate);max-width:var(--measure);}
+  .body + .body{margin-top:1.1em;}
+  .body b{color:var(--ink);font-weight:600;}
+
+  /* ---------- RUNNING HEAD ---------- */
+  .runhead{position:sticky;top:0;z-index:60;background:rgba(246,249,252,0.86);backdrop-filter:saturate(150%) blur(12px);border-bottom:1px solid var(--line);}
+  .runhead-spectrum{height:3px;background:linear-gradient(90deg,var(--navy),var(--marine) 32%,var(--azure) 58%,var(--sky) 80%,var(--mist));}
+  .runhead-in{max-width:var(--maxw);margin:0 auto;padding:0 var(--mx);height:60px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+  .rh-brand{display:flex;align-items:center;gap:11px;min-width:0;}
+  .rh-brand img{height:26px;}
+  .rh-brand .wm{font-family:var(--font-display);font-size:13px;font-weight:800;letter-spacing:0.06em;color:var(--navy);white-space:nowrap;}
+  .rh-brand .div{width:1px;height:16px;background:var(--border-strong);flex:none;}
+  .rh-brand .cur{font-family:var(--font-mono);font-size:11px;letter-spacing:0.04em;color:var(--steel);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .folios{display:flex;gap:2px;}
+  .folios a{font-family:var(--font-mono);font-size:11px;color:var(--mute);padding:6px 7px;border-radius:4px;transition:color .2s,background .2s;}
+  .folios a:hover{color:var(--navy);}
+  .folios a.active{color:var(--azure);}
+  @media (max-width:900px){.folios{display:none;}}
+  .progress{position:absolute;left:0;bottom:-1px;height:2px;background:var(--azure);width:0;}
+
+  /* ---------- COVER ---------- */
+  .cover{position:relative;min-height:100svh;background:var(--navy);color:#fff;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;}
+  .cover-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-1;}
+  .cover-fan{position:absolute;right:-8%;top:-26%;width:760px;max-width:74%;opacity:.10;z-index:-1;}
+  .cover-top{padding:30px var(--mx) 0;display:flex;justify-content:space-between;align-items:center;}
+  .cover-top .kicker{color:rgba(220,231,245,0.5);}
+  .cover-mid{flex:1;display:flex;flex-direction:column;justify-content:center;padding:48px var(--mx);max-width:var(--maxw);margin:0 auto;width:100%;}
+  .cover-monogram{width:clamp(60px,6.5vw,92px);margin-bottom:clamp(34px,6vh,66px);}
+  .cover h1{font-family:var(--font-display);font-weight:800;font-size:clamp(46px,8.6vw,124px);line-height:0.98;letter-spacing:-0.03em;margin:0;max-width:15ch;color:#fff;}
+  .cover h1 em{font-style:normal;color:var(--sky);}
+  .cover-sub{margin-top:clamp(26px,4vh,46px);max-width:50ch;font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:rgba(220,231,245,0.7);}
+  .cover-bot{padding:0 var(--mx) 34px;max-width:var(--maxw);margin:0 auto;width:100%;}
+  .cover-rule{height:1px;background:rgba(220,231,245,0.16);margin-bottom:20px;}
+  .cover-meta{display:flex;flex-wrap:wrap;gap:14px 40px;justify-content:space-between;align-items:baseline;}
+  .cover-meta .item{display:flex;flex-direction:column;gap:5px;}
+  .cover-meta .item .k{font-family:var(--font-mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(220,231,245,0.42);}
+  .cover-meta .item .v{font-family:var(--font-mono);font-size:12px;letter-spacing:0.03em;color:rgba(220,231,245,0.82);}
+  .scrollcue{display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(220,231,245,0.5);}
+  .scrollcue .line{width:34px;height:1px;background:rgba(220,231,245,0.4);position:relative;overflow:hidden;}
+  .scrollcue .line::after{content:"";position:absolute;inset:0;width:12px;background:var(--sky);animation:cue 2.4s var(--ease-out) infinite;}
+  @keyframes cue{0%{transform:translateX(-14px);}60%,100%{transform:translateX(40px);}}
+  @media (prefers-reduced-motion:reduce){.scrollcue .line::after{animation:none;}}
+
+  /* ---------- CONTENTS ---------- */
+  .contents{padding:clamp(70px,12vh,138px) 0;}
+  .toc{border-top:1px solid var(--line);margin-top:38px;}
+  .toc a{display:grid;grid-template-columns:var(--rail) 1fr auto;gap:28px;align-items:baseline;padding:25px 0;border-bottom:1px solid var(--line);transition:padding-left .32s var(--ease-out),background .3s;}
+  .toc a:hover{padding-left:14px;}
+  .toc .f{font-family:var(--font-mono);font-size:13px;color:var(--mute);}
+  .toc a:hover .f{color:var(--azure);}
+  .toc .t{font-family:var(--font-display);font-weight:700;font-size:clamp(23px,3vw,33px);letter-spacing:-0.02em;color:var(--navy);}
+  .toc .d{font-size:13px;color:var(--steel);text-align:right;max-width:36ch;line-height:1.5;}
+  @media (max-width:760px){.toc a{grid-template-columns:46px 1fr;gap:14px;}.toc .d{display:none;}}
+
+  /* ---------- CHAPTER STRUCTURE ---------- */
+  .chapter{padding:clamp(76px,12vh,144px) 0;border-top:1px solid var(--line);}
+  .chapter--tint{background:var(--ice);}
+  .chapter--dark{background:var(--navy);color:#fff;}
+  .chapter--dark .kicker{color:rgba(220,231,245,0.55);}
+  .chapter--dark .ch-title,.chapter--dark .ch-folio{color:#fff;}
+  .chapter--dark .body{color:rgba(220,231,245,0.66);}
+  .chapter--dark .body b{color:#fff;}
+  .chapter--dark .ch-manifesto{color:rgba(220,231,245,0.72);}
+  .chapter--dark .subhead{border-color:rgba(220,231,245,0.18);}
+  .chapter--dark .subhead h3{color:#fff;}
+
+  .ch-head{display:grid;grid-template-columns:var(--rail) 1fr;gap:0 28px;align-items:start;margin-bottom:clamp(46px,7vh,80px);}
+  .ch-folio{font-family:var(--font-display);font-weight:800;font-size:clamp(40px,4.6vw,66px);line-height:0.9;letter-spacing:-0.03em;color:var(--navy);}
+  .ch-folio img{width:20px;margin-top:16px;opacity:.6;}
+  .ch-headmain{max-width:780px;}
+  .ch-title{font-family:var(--font-display);font-weight:700;font-size:clamp(32px,4.4vw,54px);line-height:1.05;letter-spacing:-0.025em;margin:14px 0 0;color:var(--navy);}
+  .ch-title em{font-style:normal;color:var(--azure);}
+  .ch-manifesto{margin-top:22px;font-size:clamp(17px,1.7vw,20px);line-height:1.55;color:var(--slate);max-width:var(--measure);}
+  @media (max-width:760px){.ch-head{grid-template-columns:1fr;gap:14px;}.ch-folio{font-size:40px;}.ch-folio img{display:none;}}
+
+  .ch-body{display:grid;grid-template-columns:var(--rail) 1fr;gap:0 28px;}
+  .ch-body > .span{grid-column:2;min-width:0;}
+  .ch-body > .full{grid-column:1 / -1;min-width:0;}
+  @media (max-width:760px){.ch-body{grid-template-columns:1fr;}.ch-body > .span{grid-column:1;}}
+  .stack > * + *{margin-top:var(--gap,28px);}
+
+  .subhead{display:flex;align-items:baseline;gap:14px;margin:0 0 24px;padding-bottom:14px;border-bottom:1px solid var(--line);}
+  .subhead .n{font-family:var(--font-mono);font-size:11px;color:var(--azure);}
+  .subhead h3{font-family:var(--font-display);font-size:15px;font-weight:600;letter-spacing:0.01em;margin:0;color:var(--navy);}
+
+  .cols-2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,60px);}
+  .cols-3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,46px);}
+  @media (max-width:760px){.cols-2,.cols-3{grid-template-columns:1fr;gap:32px;}}
+  .field-label{font-family:var(--font-mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--steel);margin-bottom:12px;}
+  .statement{font-family:var(--font-display);font-weight:700;font-size:clamp(28px,3.6vw,46px);line-height:1.12;letter-spacing:-0.02em;color:var(--navy);max-width:18ch;}
+  .statement em{font-style:normal;color:var(--azure);}
+
+  .callout{background:var(--ice);border-radius:10px;padding:22px 26px;display:flex;gap:16px;align-items:flex-start;border:1px solid var(--line);}
+  .chapter--dark .callout{background:rgba(220,231,245,0.05);border-color:rgba(220,231,245,0.14);}
+  .callout .d{flex:none;width:8px;height:8px;border-radius:50%;background:var(--azure);margin-top:7px;}
+  .callout .t{font-size:14px;line-height:1.6;color:var(--slate);}
+  .chapter--dark .callout .t{color:rgba(220,231,245,0.74);}
+  .callout .t b{color:var(--navy);}
+  .chapter--dark .callout .t b{color:#fff;}
+
+  /* ---------- LOGO ---------- */
+  .lock-row{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+  .lock-cell{background:var(--surface);padding:clamp(34px,5vw,64px) 32px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;min-height:200px;}
+  .lock-cell.cloud{background:var(--cloud);}
+  .lock-cell.navy{background:var(--navy);}
+  .lock-cell.ice{background:var(--ice);}
+  .lock-cell img{max-width:240px;width:100%;height:auto;}
+  .lock-cell.icon img{max-width:84px;}
+  .lock-cell .tag{font-family:var(--font-mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--steel);}
+  .lock-cell.navy .tag{color:rgba(220,231,245,0.55);}
+  @media (max-width:620px){.lock-row{grid-template-columns:1fr;}}
+  .clearspace{position:relative;display:inline-block;padding:34px;background:repeating-linear-gradient(45deg,rgba(21,106,248,0.07),rgba(21,106,248,0.07) 6px,transparent 6px,transparent 12px);border:1px dashed var(--border-strong);border-radius:6px;}
+  .clearspace img{height:50px;}
+  .misuse{display:flex;align-items:center;justify-content:center;padding:24px;border:1px solid var(--line);border-radius:8px;background:var(--surface);min-height:104px;position:relative;}
+  .misuse .x{position:absolute;top:10px;right:12px;color:#c0392b;font-size:13px;}
+  .misuse-note{font-size:12px;color:var(--steel);margin-top:10px;line-height:1.4;}
+
+  /* ---------- COLOR ---------- */
+  .spectrum-band{display:flex;height:clamp(120px,16vw,176px);border-radius:10px;overflow:hidden;box-shadow:var(--shadow-card);}
+  .spectrum-band .s{flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;cursor:pointer;transition:flex .3s var(--ease-out);}
+  .spectrum-band .s:hover{flex:1.4;}
+  .spectrum-band .s .nm{font-family:var(--font-display);font-weight:700;font-size:14px;}
+  .spectrum-band .s .hx{font-family:var(--font-mono);font-size:11px;opacity:.85;margin-top:2px;}
+  .swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+  @media (max-width:820px){.swatches{grid-template-columns:repeat(2,1fr);}}
+  .sw{cursor:pointer;}
+  .sw .field{height:clamp(104px,13vw,150px);position:relative;}
+  .sw .field .pin{position:absolute;top:12px;left:14px;font-family:var(--font-mono);font-size:10px;letter-spacing:0.1em;opacity:0;transition:opacity .2s;}
+  .sw:hover .field .pin{opacity:1;}
+  .sw .meta{padding:13px 4px 4px;}
+  .sw .nm{font-family:var(--font-display);font-size:14px;font-weight:600;display:flex;align-items:baseline;justify-content:space-between;gap:8px;}
+  .sw .nm .pct{font-family:var(--font-mono);font-size:10px;color:var(--azure);font-weight:500;}
+  .sw .hex{font-family:var(--font-mono);font-size:11px;color:var(--steel);margin-top:3px;}
+  .sw .role{font-size:12px;color:var(--steel);margin-top:9px;line-height:1.45;}
+  .ratio{display:flex;height:clamp(70px,10vw,104px);border-radius:8px;overflow:hidden;}
+  .ratio > div{display:flex;align-items:flex-end;padding:14px 16px;}
+  .ratio .l{font-family:var(--font-mono);font-size:11px;}
+  .ratio-key{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:18px;}
+  .ratio-key .i{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--slate);}
+  .ratio-key .dt{width:11px;height:11px;border-radius:2px;}
+  .budget{display:flex;align-items:center;gap:16px;margin-top:8px;}
+  .budget .track{flex:1;height:8px;border-radius:999px;background:var(--ice);border:1px solid var(--line);overflow:hidden;}
+  .budget .fill{height:100%;width:4%;background:var(--azure);}
+  .budget .read{font-family:var(--font-mono);font-size:11px;color:var(--azure);white-space:nowrap;}
+  .pairs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  @media (max-width:760px){.pairs{grid-template-columns:1fr 1fr;}}
+  .pair{border-radius:8px;padding:20px 18px;border:1px solid var(--line);}
+  .pair .big{font-family:var(--font-display);font-weight:700;font-size:32px;line-height:1;letter-spacing:-0.02em;}
+  .pair .sm{font-size:12px;margin-top:10px;line-height:1.4;}
+  .pair .ratio-no{font-family:var(--font-mono);font-size:10px;letter-spacing:0.06em;margin-top:14px;display:flex;align-items:center;gap:6px;}
+  .pair .ratio-no .ok{color:var(--positive);}
+  .mapcols{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;}
+  @media (max-width:760px){.mapcols{grid-template-columns:repeat(4,1fr);}}
+  @media (max-width:460px){.mapcols{grid-template-columns:repeat(2,1fr);}}
+  .mapcol{cursor:pointer;}
+  .mapcol .f{height:92px;border-radius:4px 4px 0 0;}
+  .mapcol .n{font-family:var(--font-display);font-size:12px;font-weight:600;margin-top:10px;}
+  .mapcol .h{font-family:var(--font-mono);font-size:10px;color:var(--steel);margin-top:3px;}
+  .mapcol .r{font-size:11px;color:var(--steel);margin-top:6px;line-height:1.4;}
+
+  /* ---------- TYPOGRAPHY ---------- */
+  .specimen{display:grid;grid-template-columns:minmax(0,0.9fr) 1.4fr;gap:clamp(28px,4vw,56px);padding:clamp(30px,4vw,48px) 0;border-bottom:1px solid var(--line);align-items:center;}
+  .specimen:first-of-type{border-top:1px solid var(--line);}
+  .specimen .glyph{font-size:clamp(110px,15vw,190px);line-height:0.8;letter-spacing:-0.03em;color:var(--navy);}
+  .specimen .glyph.disp{font-family:var(--font-display);font-weight:800;}
+  .specimen .glyph.sans{font-family:var(--font-sans);font-weight:600;}
+  .specimen .glyph.mono{font-family:var(--font-mono);font-weight:500;}
+  .specimen .info .fam{font-family:var(--font-display);font-size:20px;font-weight:700;}
+  .specimen .info .role{font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--azure);margin-top:8px;}
+  .specimen .info .set{font-family:var(--font-mono);font-size:13px;color:var(--steel);margin-top:18px;letter-spacing:0.02em;}
+  .specimen .info .desc{font-size:14px;line-height:1.6;color:var(--slate);margin-top:14px;max-width:46ch;}
+  @media (max-width:680px){.specimen{grid-template-columns:1fr;gap:16px;}.specimen .glyph{font-size:110px;}}
+  .scale{border-top:1px solid var(--line);}
+  .scale-row{display:grid;grid-template-columns:var(--rail) 1fr;gap:28px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line);}
+  .scale-row .spec{font-family:var(--font-mono);font-size:11px;color:var(--steel);line-height:1.7;}
+  .scale-row .spec b{color:var(--navy);font-weight:600;display:block;font-family:var(--font-sans);font-size:12px;letter-spacing:0.04em;margin-bottom:4px;}
+  .scale-row .live{min-width:0;color:var(--navy);}
+  @media (max-width:680px){.scale-row{grid-template-columns:1fr;gap:8px;}}
+
+  /* ---------- VOICE ---------- */
+  .lex{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+  .lex > div{padding:28px;}
+  .lex > div:first-child{border-right:1px solid var(--line);}
+  .lex .words{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+  .lex .w{font-size:14px;padding:6px 13px;border-radius:4px;border:1px solid var(--line);background:var(--surface);color:var(--ink);}
+  .lex .w.no{color:var(--steel);text-decoration:line-through;text-decoration-color:var(--border-strong);background:transparent;}
+  @media (max-width:620px){.lex{grid-template-columns:1fr;}.lex > div:first-child{border-right:none;border-bottom:1px solid var(--line);}}
+  .heads{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:28px;}
+  .heads > p{background:var(--surface);margin:0;padding:30px 26px;font-family:var(--font-display);font-weight:700;font-size:clamp(19px,2.1vw,24px);line-height:1.22;letter-spacing:-0.015em;color:var(--navy);}
+  .heads > p em{font-style:normal;color:var(--azure);}
+  @media (max-width:760px){.heads{grid-template-columns:1fr;}}
+
+  /* ---------- SPACE / RADII / ELEVATION ---------- */
+  .ladder{display:flex;flex-direction:column;gap:2px;}
+  .ladder .row{display:grid;grid-template-columns:128px 1fr auto;gap:18px;align-items:center;padding:9px 0;}
+  .ladder .tok{font-family:var(--font-mono);font-size:12px;color:var(--navy);}
+  .ladder .bar{height:16px;background:var(--azure);border-radius:2px;opacity:0.9;}
+  .ladder .px{font-family:var(--font-mono);font-size:11px;color:var(--steel);}
+  .radii{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .radii .r{display:flex;flex-direction:column;align-items:center;gap:12px;}
+  .radii .box{width:100%;height:80px;background:var(--ice);border:1px solid var(--border-strong);}
+  .radii .lab{font-family:var(--font-mono);font-size:11px;color:var(--steel);text-align:center;line-height:1.5;}
+  .radii .lab b{color:var(--navy);}
+  .elev{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  @media (max-width:760px){.elev{grid-template-columns:1fr;}}
+  .elev .e{height:128px;border-radius:14px;background:var(--surface);border:1px solid var(--line);display:flex;align-items:flex-end;padding:16px;}
+  .elev .e.card{box-shadow:var(--shadow-card);}
+  .elev .e.deep{box-shadow:var(--shadow-deep);}
+  .elev .e.az{box-shadow:var(--shadow-azure);background:var(--azure);}
+  .elev .c{font-family:var(--font-mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--steel);}
+  .elev .e.az .c{color:#fff;}
+
+  /* ---------- COMPONENTS ---------- */
+  .btn-primary{background:var(--navy);color:#fff;font:600 15px/1 var(--font-sans);padding:13px 24px;border-radius:6px;border:none;cursor:pointer;transition:all var(--dur-base) var(--ease-out);}
+  .btn-primary:hover{background:var(--navy-700);transform:translateY(-1px);box-shadow:var(--shadow-card);}
+  .btn-accent{background:var(--azure);color:#fff;font:600 15px/1 var(--font-sans);padding:13px 24px;border-radius:6px;border:none;cursor:pointer;transition:all var(--dur-base) var(--ease-out);}
+  .btn-accent:hover{background:var(--azure-600);transform:translateY(-1px);box-shadow:var(--shadow-azure);}
+  .btn-secondary{background:transparent;color:var(--navy);font:600 15px/1 var(--font-sans);padding:13px 24px;border-radius:6px;border:1.5px solid var(--navy);cursor:pointer;transition:all var(--dur-base) var(--ease-out);}
+  .btn-secondary:hover{background:var(--navy);color:#fff;}
+  .ticker{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:12px;font-weight:600;letter-spacing:0.02em;padding:7px 11px;border:1px solid var(--line);background:var(--surface);border-radius:4px;color:var(--navy);}
+  .ticker b{color:var(--sky);}
+  .badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-sans);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:4px 9px;border-radius:4px;}
+  .badge.navy{background:var(--navy);color:#fff;}
+  .badge.az{background:var(--ice);color:var(--azure-600);border:1px solid color-mix(in srgb,var(--azure) 30%,transparent);}
+  .badge.out{background:transparent;color:var(--slate);border:1px solid var(--border-strong);}
+  .badge.news{background:color-mix(in srgb,var(--positive) 12%,#fff);color:var(--positive);border:1px solid color-mix(in srgb,var(--positive) 30%,transparent);}
+  .ctag{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px 11px 4px 8px;}
+  .ctag .dt{width:9px;height:9px;border-radius:50%;}
+  .ctag .cn{font-family:var(--font-sans);font-weight:500;color:var(--steel);}
+  .stage{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-sans);font-size:12px;font-weight:600;border-radius:999px;padding:4px 11px;}
+  .stage .sd{width:7px;height:7px;border-radius:50%;}
+  .field-input{display:flex;flex-direction:column;gap:8px;}
+  .field-input label{font-size:13px;font-weight:600;color:var(--navy);}
+  .field-input input{font:15px/1 var(--font-sans);color:var(--ink);padding:11px 13px;border-radius:6px;border:1px solid var(--border-strong);background:#fff;transition:border-color .2s,box-shadow .2s;}
+  .field-input input::placeholder{color:var(--mute);}
+  .field-input input:focus{outline:none;border-color:var(--azure);box-shadow:0 0 0 3px var(--focus-ring);}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .kpis > div{padding:22px 24px 22px 0;border-right:1px solid var(--line);}
+  .kpis > div:last-child{border-right:none;}
+  .kpis dt{font-family:var(--font-sans);font-size:13px;color:var(--steel);margin:0 0 10px;}
+  .kpis dd{font-family:var(--font-display);font-size:clamp(28px,2.6vw,42px);font-weight:700;line-height:1;letter-spacing:-0.02em;margin:0;color:var(--navy);}
+  .kpis dd em{font-style:normal;color:var(--azure);}
+  @media (max-width:680px){.kpis{grid-template-columns:1fr 1fr;}}
+  .index-row{display:grid;grid-template-columns:48px 1fr auto 30px;gap:22px;align-items:center;padding:20px 0;border-top:1px solid var(--line);transition:padding-left .3s var(--ease-out);}
+  .index-row:last-child{border-bottom:1px solid var(--line);}
+  .index-row:hover{padding-left:12px;}
+  .index-row .n{font-family:var(--font-mono);font-size:13px;color:var(--mute);}
+  .index-row .nm{font-family:var(--font-display);font-weight:700;font-size:20px;letter-spacing:-0.01em;color:var(--navy);}
+  .index-row .ds{font-size:13px;color:var(--steel);margin-top:3px;}
+  .index-row .ar{font-size:18px;color:var(--border-strong);transition:color .3s,transform .3s;}
+  .index-row:hover .ar{color:var(--azure);transform:translateX(4px);}
+  .navmini{width:100%;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff;}
+  .navmini .sp{height:3px;background:linear-gradient(90deg,var(--navy),var(--marine) 32%,var(--azure) 58%,var(--sky) 80%,var(--mist));}
+  .navmini .bar{height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;}
+  .navmini .bl{display:flex;align-items:center;gap:9px;}
+  .navmini .bl img{height:22px;}
+  .navmini .bl .w{font-family:var(--font-display);font-weight:800;font-size:13px;color:var(--navy);}
+  .navmini .lnk{display:flex;gap:20px;align-items:center;}
+  .navmini .lnk span{font-size:13px;font-weight:600;color:var(--slate);position:relative;}
+  .navmini .lnk span.active{color:var(--navy);}
+  .navmini .lnk span.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1.5px;background:var(--azure);}
+  .navmini .lnk .cta{background:var(--azure);color:#fff;padding:7px 12px;border-radius:6px;font-size:12px;}
+
+  /* ---------- REVERSED / DATA UI ---------- */
+  .reverse{background:var(--navy);border-radius:14px;padding:clamp(30px,4vw,48px);color:#fff;}
+  .reverse .rt{font-family:var(--font-display);font-weight:700;font-size:clamp(22px,2.6vw,30px);letter-spacing:-0.02em;margin:14px 0 10px;}
+  .reverse .rb{font-size:15px;line-height:1.6;color:rgba(220,231,245,0.66);max-width:48ch;}
+  .reverse .btn-q{background:#fff;color:var(--navy);font:600 14px/1 var(--font-sans);padding:11px 22px;border-radius:6px;border:none;cursor:pointer;transition:background .2s,color .2s;}
+  .reverse .btn-q:hover{background:var(--azure);color:#fff;}
+  .dtable{width:100%;border-collapse:collapse;font-family:var(--font-sans);}
+  .dtable th{text-align:left;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(220,231,245,0.6);padding:10px 12px;border-bottom:2px solid var(--azure);}
+  .dtable td{padding:11px 12px;border-bottom:1px solid rgba(220,231,245,0.12);font-size:13px;color:rgba(220,231,245,0.82);}
+  .dtable td.m{font-family:var(--font-mono);color:#fff;font-variant-numeric:tabular-nums;}
+  .dtable td.m b{color:var(--sky);font-weight:600;}
+
+  /* ---------- MOMENTS / DO-DONT ---------- */
+  .moment{border-radius:14px;border:1px solid var(--line);overflow:hidden;background:#fff;}
+  .moment .stage{position:relative;height:200px;background:var(--navy);overflow:hidden;}
+  .moment .stage canvas{position:absolute;inset:0;width:100%;height:100%;}
+  .moment .stage img.fan{position:absolute;right:-10%;top:-30%;width:60%;opacity:.14;}
+  .moment .meta{padding:20px 22px;}
+  .moment .meta h4{font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:-0.015em;margin:0 0 8px;color:var(--navy);}
+  .moment .meta p{font-size:13.5px;line-height:1.55;color:var(--slate);margin:0;}
+  .dd{border-radius:8px;border:1px solid var(--line);overflow:hidden;background:#fff;}
+  .dd .h{display:flex;align-items:center;gap:8px;padding:12px 18px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;border-bottom:1px solid var(--line);}
+  .dd.do .h{color:var(--positive);}
+  .dd.dont .h{color:#c0392b;}
+  .dd .b{padding:18px;font-size:14px;line-height:1.6;color:var(--slate);}
+
+  /* ---------- ICONS ---------- */
+  .glyphcat{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+  .glyphcat .g{background:var(--surface);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;aspect-ratio:1;transition:background .18s var(--ease-out);}
+  .glyphcat .g:hover{background:var(--ice);}
+  .glyphcat .g svg{width:26px;height:26px;}
+  .glyphcat .g .gl{font-family:var(--font-mono);font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);}
+  .gi{fill:none;stroke:var(--navy);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+  .gi.az{stroke:var(--azure);}
+
+  /* ---------- ACCESSIBILITY ---------- */
+  .a11y-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  @media (max-width:680px){.a11y-grid{grid-template-columns:1fr;}}
+  .a11y{border:1px solid var(--line);border-radius:10px;padding:24px;background:var(--surface);}
+  .a11y h4{font-family:var(--font-display);font-size:16px;font-weight:600;margin:0 0 8px;color:var(--navy);}
+  .a11y p{font-size:14px;line-height:1.6;color:var(--slate);margin:0;}
+
+  /* ---------- COLOPHON ---------- */
+  .colophon{background:var(--navy-900);color:#fff;position:relative;overflow:hidden;isolation:isolate;}
+  .colophon-fan{position:absolute;left:-10%;bottom:-30%;width:520px;opacity:.08;z-index:-1;}
+  .colophon .wrap{padding:clamp(70px,11vh,124px) var(--mx);}
+  .colophon .ast{width:44px;margin-bottom:34px;}
+  .colophon .big{font-family:var(--font-display);font-weight:800;font-size:clamp(34px,5vw,64px);line-height:1.04;letter-spacing:-0.025em;max-width:16ch;}
+  .colophon .big em{font-style:normal;color:var(--sky);}
+  .colophon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:clamp(46px,7vh,80px);padding-top:36px;border-top:1px solid rgba(220,231,245,0.16);}
+  @media (max-width:760px){.colophon-grid{grid-template-columns:1fr;gap:28px;}}
+  .colophon-grid .k{font-family:var(--font-mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(220,231,245,0.45);margin-bottom:12px;}
+  .colophon-grid .v{font-family:var(--font-mono);font-size:12px;line-height:1.9;color:rgba(220,231,245,0.78);}
+  .colophon-bot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:44px;font-family:var(--font-mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(220,231,245,0.4);}
+
+  /* reveal */
+  [data-reveal]{opacity:1;transform:none;}
+  .has-js [data-reveal]{opacity:0;transform:translateY(10px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);}
+  .has-js [data-reveal].in{opacity:1;transform:none;}
+  .has-js [data-reveal].shown{opacity:1 !important;transform:none !important;transition:none !important;}
+  @media (prefers-reduced-motion:reduce){.has-js [data-reveal]{opacity:1;transform:none;transition:none;}}
+
+  /* toast */
+  .toast{position:fixed;bottom:26px;left:50%;transform:translate(-50%,18px);background:var(--navy);color:#fff;font-family:var(--font-mono);font-size:12px;letter-spacing:0.03em;padding:11px 18px;border-radius:6px;z-index:200;opacity:0;pointer-events:none;transition:opacity .22s,transform .22s;box-shadow:var(--shadow-deep);}
+  .toast.show{opacity:1;transform:translate(-50%,0);}
+  .toast b{color:var(--sky);font-weight:500;}
+  .copyable{cursor:pointer;}
+</style>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#04214E">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#04214E"/>
+    <g transform="translate(600 360)">
+      <path d="M0 0 L-120 -210 L-70 -220 Z" fill="#68ABFC"/>
+      <path d="M0 0 L-40 -250 L40 -250 Z" fill="#156AF8"/>
+      <path d="M0 0 L70 -230 L150 -190 Z" fill="#1140AA"/>
+      <path d="M0 0 L210 -120 L250 -40 Z" fill="#0A2C5E"/>
+      <path d="M0 0 L250 30 A250 250 0 0 1 250 30 L120 70 Z" fill="#021737"/>
+    </g>
+    <text x="600" y="560" text-anchor="middle" fill="#DCE7F5" font-family="Arial, sans-serif" font-weight="bold" font-size="40" letter-spacing="8">EASTPORT</text>
+  </svg>
+</template>
+
+<a href="#contents" class="skip-link">Skip to contents</a>
+
+<!-- ============ RUNNING HEAD ============ -->
+<div class="runhead">
+  <div class="runhead-spectrum"></div>
+  <div class="runhead-in">
+    <a class="rh-brand" href="#cover">
+      <img src="assets/logos/eastport-mark.png" alt="">
+      <span class="wm">EASTPORT</span>
+      <span class="div"></span>
+      <span class="cur">Brand &amp; Visual System</span>
+    </a>
+    <nav class="folios" aria-label="Chapters">
+      <a href="#ch01">01</a><a href="#ch02">02</a><a href="#ch03">03</a><a href="#ch04">04</a><a href="#ch05">05</a><a href="#ch06">06</a><a href="#ch07">07</a><a href="#ch08">08</a><a href="#ch09">09</a><a href="#ch10">10</a>
+    </nav>
+  </div>
+  <div class="progress" id="progress"></div>
+</div>
+
+<!-- ============ COVER ============ -->
+<header class="cover" id="cover">
+  <canvas class="cover-canvas" id="coverCanvas" aria-hidden="true"></canvas>
+  <img class="cover-fan" src="assets/logos/eastport-mark-white.png" alt="">
+  <div class="cover-top">
+    <span class="kicker">Eastport Critical Metals</span>
+    <span class="kicker">TSXV:EVI · OTCQB:EVIIF</span>
+  </div>
+  <div class="cover-mid">
+    <img class="cover-monogram" src="assets/logos/eastport-mark-white.png" alt="Eastport mark">
+    <h1>Brand &amp;<br>Visual <em>System</em></h1>
+    <p class="cover-sub">The canonical reference for everything Eastport makes — the website, investor decks, fact sheets, maps and reports. One system, rigorously applied, so capital meets clarity.</p>
+  </div>
+  <div class="cover-bot">
+    <div class="cover-rule"></div>
+    <div class="cover-meta">
+      <div class="item"><span class="k">System</span><span class="v">Navy · Azure · Spectrum</span></div>
+      <div class="item"><span class="k">Typefaces</span><span class="v">Montserrat · Source Sans 3 · Source Code Pro</span></div>
+      <div class="item"><span class="k">Version</span><span class="v">v1 · June 2026</span></div>
+      <div class="item"><span class="k">Custody</span><span class="v">Eastport · Vancouver / Gaborone</span></div>
+      <div class="scrollcue">Begin <span class="line"></span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ CONTENTS ============ -->
+<section class="contents" id="contents">
+  <div class="wrap">
+    <span class="kicker kicker--az" data-reveal>Contents</span>
+    <div class="toc" data-reveal>
+      <a href="#ch01"><span class="f">01</span><span class="t">Foundation</span><span class="d">Positioning, register and the discipline behind every decision.</span></a>
+      <a href="#ch02"><span class="f">02</span><span class="t">Logo</span><span class="d">The dawn-fan mark, lockups, clear space and misuse.</span></a>
+      <a href="#ch03"><span class="f">03</span><span class="t">Color</span><span class="d">The blue spectrum, cool neutrals, the usage law and the commodity palette.</span></a>
+      <a href="#ch04"><span class="f">04</span><span class="t">Typography</span><span class="d">Three voices — Montserrat display, Source Sans UI, Source Code Pro data.</span></a>
+      <a href="#ch05"><span class="f">05</span><span class="t">Voice &amp; Tone</span><span class="d">How we sound: investor-grade, specific, never hype.</span></a>
+      <a href="#ch06"><span class="f">06</span><span class="t">Space &amp; Elevation</span><span class="d">The 4pt grid, crisp radii and a soft cool shadow system.</span></a>
+      <a href="#ch07"><span class="f">07</span><span class="t">Components</span><span class="d">Buttons, tickers, tags, fields, KPIs and the project index.</span></a>
+      <a href="#ch08"><span class="f">08</span><span class="t">Reversed &amp; Data UI</span><span class="d">The system on Navy — the institutional data register.</span></a>
+      <a href="#ch09"><span class="f">09</span><span class="t">Motion &amp; Moments</span><span class="d">The spectrum and fan, used as atmosphere not decoration.</span></a>
+      <a href="#ch10"><span class="f">10</span><span class="t">Accessibility</span><span class="d">Contrast, focus and reduced motion — part of the system.</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 01 FOUNDATION ============ -->
+<section class="chapter" id="ch01">
+  <div class="wrap">
+    <div class="ch-head" data-reveal>
+      <div class="ch-folio">01<img src="assets/logos/eastport-mark-navy.png" alt=""></div>
+      <div class="ch-headmain">
+        <span class="kicker kicker--az">Foundation</span>
+        <h1 class="ch-title">A deposit is only worth what the market can <em>understand</em>.</h1>
+        <p class="ch-manifesto">Eastport is a critical-minerals developer advancing five projects in Botswana. This system is the layer between that geology and the capital markets — investor-grade, disciplined, and built for scrutiny.</p>
+      </div>
+    </div>
+    <div class="ch-body">
+      <div class="span stack" style="--gap:64px;">
+        <div class="cols-2" data-reveal>
+          <div>
+            <div class="field-label">Positioning</div>
+            <p class="statement">Capital meets <em>discipline</em>.</p>
+          </div>
+          <div class="stack" style="--gap:24px;">
+            <p class="body">We present a diversified, advanced-stage portfolio — copper, nickel, cobalt, uranium and rare earths — to the institutional and retail investors who fund it. Every map, deck and page is held to the standard of a public-company news release.</p>
+            <p class="body">Premium is a function of restraint. The work should read like an institutional research note: <b>calm authority, evidence over adjectives, numbers that carry the argument.</b></p>
+          </div>
+        </div>
+        <div class="cols-3" data-reveal>
+          <div><div class="field-label">Register</div><p class="body" style="font-size:15px;">Confident and quiet. Structure comes from white space and 1px hairlines — not color blocks or ornament.</p></div>
+          <div><div class="field-label">Discipline</div><p class="body" style="font-size:15px;">Cool neutrals carry the weight. Azure is earned — it marks the one action, the live tick, never decoration.</p></div>
+          <div><div class="field-label">Audience</div><p class="body" style="font-size:15px;">Portfolio managers and analysts; geologists and GIS specialists; the retail investor reading the deck.</p></div>
+        </div>
+        <div class="callout" data-reveal>
+          <span class="d"></span>
+          <p class="t"><b>One thesis, repeated.</b> Five projects · ~$20M invested · 100+ years of combined experience · a lean, heavily-aligned team in a tier-one jurisdiction. Every surface should ladder back to that. If a page doesn't advance the thesis, cut it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 LOGO ============ -->
+<section class="chapter chapter--tint" id="ch02">
+  <div class="wrap">
+    <div class="ch-head" data-reveal>
+      <div class="ch-folio">02</div>
+      <div class="ch-headmain">
+        <span class="kicker kicker--az">Logo</span>
+        <h1 class="ch-title">A rising fan — dawn over the deposit.</h1>
+        <p class="ch-manifesto">A spectrum of blades radiating from the horizon, paired with a geometric wordmark. It signals dawn, growth and a portfolio fanning open. Never recolor it outside the variants below.</p>
+      </div>
+    </div>
+    <div class="ch-body">
+      <div class="span stack" style="--gap:56px;">
+        <div data-reveal>
+          <div class="subhead"><span class="n">2.1</span><h3>Lockups</h3></div>
+          <div class="lock-row">
+            <div class="lock-cell cloud"><img src="assets/logos/eastport-logo-full.png" alt="Primary lockup"><span class="tag">Primary · full-color on light</span></div>
+            <div class="lock-cell ice"><img src="assets/logos/eastport-mark-navy.png" style="max-width:120px;" alt="Navy mono mark"><span class="tag">Mark · navy monochrome</span></div>
+            <div class="lock-cell navy"><img src="assets/logos/eastport-logo-white.png" alt="Reversed lockup"><span class="tag">Reversed · mono white on navy</span></div>
+            <div class="lock-cell icon cloud"><img src="assets/logos/eastport-mark.png" alt="Icon mark"><span class="tag">Mark · favicon, avatar, compact</span></div>
+          </div>
+        </div>
+        <div class="cols-2" data-reveal>
+          <div>
+            <div class="subhead"><span class="n">2.2</span><h3>Clear space &amp; minimum size</h3></div>
+            <div class="clearspace"><img src="assets/logos/eastport-mark.png" alt="Clear space"></div>
+            <p class="body" style="font-size:14px;margin-top:20px;">Hold clear space of at least the mark's blade height on every side. Minimum legible full-lockup width is ~140px; below that, use the mark alone. Don't crowd the fan with other graphics.</p>
+          </div>
+          <div>
+            <div class="subhead"><span class="n">2.3</span><h3>Misuse</h3></div>
+            <div class="cols-2" style="gap:14px;">
+              <div><div class="misuse"><span class="x">✕</span><img src="assets/logos/eastport-mark.png" style="height:40px;filter:hue-rotate(120deg) saturate(2);" alt=""></div><p class="misuse-note">Never recolor outside the blue spectrum.</p></div>
+              <div><div class="misuse"><span class="x">✕</span><img src="assets/logos/eastport-mark.png" style="height:30px;transform:scaleX(1.7);" alt=""></div><p class="misuse-note">Never stretch, condense or distort.</p></div>
+            </div>
+            <p class="body" style="font-size:14px;margin-top:20px;">No shadows, gradients, outlines or rotation. Don't place the full-color mark on a busy photo without a navy or quartz scrim — switch to the reversed white lockup.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 COLOR ============ -->
+<section class="chapter" id="ch03">
+  <div class="wrap">
+    <div class="ch-head" data-reveal>
+      <div class="ch-folio">03</div>
+      <div class="ch-headmain">
+        <span class="kicker kicker--az">Color</span>
+        <h1 class="ch-title">A spectrum of blues, one earned accent.</h1>
+        <p class="ch-manifesto">The entire brand palette is lifted from the logo's fan. Navy anchors, the cool neutrals carry, and Azure is rationed. <span style="color:var(--azure)">Click any field to copy its hex.</span></p>
+      </div>
+    </div>
+    <div class="ch-body">
+      <div class="span stack" style="--gap:64px;">
+        <div data-reveal>
+          <div class="subhead"><span class="n">3.1</span><h3>The brand spectrum</h3></div>
+          <div class="spectrum-band">
+            <div class="s copyable" data-copy="#04214E" style="background:#04214E"><span class="nm">Navy</span><span class="hx">#04214E</span></div>
+            <div class="s copyable" data-copy="#1140AA" style="background:#1140AA"><span class="nm">Marine</span><span class="hx">#1140AA</span></div>
+            <div class="s copyable" data-copy="#156AF8" style="background:#156AF8"><span class="nm">Azure</span><span class="hx">#156AF8</span></div>
+            <div class="s copyable" data-copy="#68ABFC" style="background:#68ABFC"><span class="nm" style="color:var(--navy)">Sky</span><span class="hx" style="color:var(--navy)">#68ABFC</span></div>
+            <div class="s copyable" data-copy="#B9D8FD" style="background:#B9D8FD"><span class="nm" style="color:var(--navy)">Mist</span><span class="hx" style="color:var(--navy)">#B9D8FD</span></div>
+          </div>
+        </div>
+        <div data-reveal>
+          <div class="subhead"><span class="n">3.2</span><h3>Cool neutrals</h3></div>
+          <div class="swatches">
+            <div class="sw copyable" data-copy="#0E2138"><div class="field" style="background:#0E2138"><span class="pin" style="color:#fff">copy</span></div><div class="meta"><div class="nm">Ink</div><div class="hex">#0E2138</div><div class="role">Heading ink — near-black navy.</div></div></div>
+            <div class="sw copyable" data-copy="#3E4F63"><div class="field" style="background:#3E4F63"><span class="pin" style="color:#fff">copy</span></div><div class="meta"><div class="nm">Slate</div><div class="hex">#3E4F63</div><div class="role">Default body copy.</div></div></div>
+            <div class="sw copyable" data-copy="#6B7B8F"><div class="field" style="background:#6B7B8F"><span class="pin" style="color:#fff">copy</span></div><div class="meta"><div class="nm">Steel</div><div class="hex">#6B7B8F</div><div class="role">Secondary / muted text.</div></div></div>
+            <div class="sw copyable" data-copy="#DCE4EF"><div class="field" style="background:#DCE4EF"><span class="pin" style="color:var(--navy)">copy</span></div><div class="meta"><div class="nm">Line</div><div class="hex">#DCE4EF</div><div class="role">1px hairline rules — never text.</div></div></div>
+            <div class="sw copyable" data-copy="#EAF1FB"><div class="field" style="background:#EAF1FB;border:1px solid var(--line)"><span class="pin" style="color:var(--navy)">copy</span></div><div class="meta"><div class="nm">Ice</div><div class="hex">#EAF1FB</div><div class="role">Alternating section wash.</div></div></div>
+            <div class="sw copyable" data-copy="#F6F9FC"><div class="field" style="background:#F6F9FC;border:1px solid var(--line)"><span class="pin" style="color:var(--navy)">copy</span></div><div class="meta"><div class="nm">Cloud</div><div class="hex">#F6F9FC</div><div class="role">The default page background.</div></div></div>
+            <div class="sw copyable" data-copy="#FFFFFF"><div class="field" style="background:#FFFFFF;border:1px solid var(--line)"><span class="pin" style="color:var(--navy)">copy</span></div><div class="meta"><div class="nm">Surface</div><div class="hex">#FFFFFF</div><div class="role">Elevated cards &amp; panels.</div></div></div>
+            <div class="sw copyable" data-copy="#021737"><div class="field" style="background:#021737"><span class="pin" style="color:#fff">copy</span></div><div class="meta"><div class="nm">Navy 900</div><div class="hex">#021737</div><div class="role">Footers, deep dark panels.</div></div></div>
+          </div>
+        </div>
+        <div class="cols-2" data-reveal style="align-items:start;">
+          <div>
+            <div class="subhead"><span class="n">3.3</span><h3>Azure — the accent, rationed</h3></div>
+            <div class="sw copyable" data-copy="#156AF8"><div class="field" style="background:#156AF8;height:130px;border-radius:8px;"><span class="pin" style="color:#fff">copy</span></div><div class="meta"><div class="nm">Azure <span class="pct">≤4%</span></div><div class="hex">#156AF8</div></div></div>
+            <p class="body" style="font-size:14px;margin-top:14px;">The bright blade of the fan. It appears only on: section eyebrows, links, the single primary CTA, active/selected state, a live-data tick and the focus ring. If azure covers more than a few percent of a surface, pull back.</p>
+            <div class="budget"><span class="kicker">Budget</span><div class="track"><div class="fill"></div></div><span class="read">≈ 4%</span></div>
+          </div>
+          <div>
+            <div class="subhead"><span class="n">3.4</span><h3>The usage law</h3></div>
+            <div class="ratio">
+              <div style="flex:62;background:var(--cloud);color:var(--steel);border:1px solid var(--line)"><span class="l">62 · Cloud</span></div>
+              <div style="flex:24;background:var(--navy);color:#fff"><span class="l">24 · Navy</span></div>
+              <div style="flex:10;background:var(--steel);color:#fff"><span class="l">10</span></div>
+              <div style="flex:4;background:var(--azure);color:#fff"><span class="l">4</span></div>
+            </div>
+            <div class="ratio-key">
+              <span class="i"><span class="dt" style="background:var(--cloud);border:1px solid var(--line)"></span>Cloud / white surfaces</span>
+              <span class="i"><span class="dt" style="background:var(--navy)"></span>Navy ink &amp; panels</span>
+              <span class="i"><span class="dt" style="background:var(--steel)"></span>Neutral grays</span>
+              <span class="i"><span class="dt" style="background:var(--azure)"></span>Azure accent</span>
+            </div>
+            <p class="body" style="font-size:14px;margin-top:18px;"><b>≈ 62 / 24 / 10 / 4.</b> Cloud and white do the work; Navy anchors type and dark moments; neutral grays handle secondary text and rules; Azure is the rationed spark.</p>
+          </div>
+        </div>
+        <div data-reveal>
+          <div class="subhead"><span class="n">3.5</span><h3>Commodity data palette</h3></div>
+          <p class="body" style="font-size:14px;margin:-8px 0 22px;">Used <b>only</b> inside maps, charts, legends and project tags — kept separate from the brand blues so a figure never competes with page chrome. One swatch per critical metal Eastport holds.</p>
+          <div class="mapcols">
+            <div class="mapcol copyable" data-copy="#B26A3C"><div class="f" style="background:#B26A3C"></div><div class="n">Copper</div><div class="h">Cu · #B26A3C</div><div class="r">Flagship Matsitama</div></div>
+            <div class="mapcol copyable" data-copy="#6E8595"><div class="f" style="background:#6E8595"></div><div class="n">Nickel</div><div class="h">Ni · #6E8595</div><div class="r">Steel grey</div></div>
+            <div class="mapcol copyable" data-copy="#2C6FD6"><div class="f" style="background:#2C6FD6"></div><div class="n">Cobalt</div><div class="h">Co · #2C6FD6</div><div class="r">Cobalt blue</div></div>
+            <div class="mapcol copyable" data-copy="#4E9E62"><div class="f" style="background:#4E9E62"></div><div class="n">Uranium</div><div class="h">U · #4E9E62</div><div class="r">Foley project</div></div>
+            <div class="mapcol copyable" data-copy="#8E5DA8"><div class="f" style="background:#8E5DA8"></div><div class="n">Rare Earths</div><div class="h">REE · #8E5DA8</div><div class="r">Lanthanide violet</div></div>
+            <div class="mapcol copyable" data-copy="#9AA3AC"><div class="f" style="background:#9AA3AC"></div><div class="n">PGE</div><div class="h">PGE · #9AA3AC</div><div class="r">Platinum grey</div></div>
+            <div class="mapcol copyable" data-copy="#C9A24B"><div class="f" style="background:#C9A24B"></div><div class="n">Gold</div><div class="h">Au · #C9A24B</div><div class="r">Showings / amber</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 TYPOGRAPHY ============ -->
+<section class="chapter chapter--tint" id="ch04">
+  <div class="wrap">
+    <div class="ch-head" data-reveal>
+      <div class="ch-folio">04</div>
+      <div class="ch-headmain">
+        <span class="kicker kicker--az">Typography</span>
+        <h1 class="ch-title">Three voices: display, body, data.</h1>
+        <p class="ch-manifesto">Montserrat sets the geometric headline that echoes the wordmark. Source Sans 3 carries every word of body and UI. Source Code Pro is reserved for the numbers — tickers, grades, coordinates.</p>
+      </div>
+    </div>
+    <div class="ch-body">
+      <div class="span stack" style="--gap:8px;">
+        <div data-reveal>
+          <div class="specimen">
+            <div class="glyph disp">Aa</div>
+            <div class="info"><div class="fam">Montserrat</div><div class="role">Display · headlines · wordmark</div><div class="set">700 Bold · 800 Extrabold · -0.02em</div><p class="desc">Geometric and confident. Used for every headline and KPI number, almost always at 700–800 with tight tracking. One word may take Azure for emphasis.</p></div>
+          </div>
+          <div class="specimen">
+            <div class="glyph sans">Aa</div>
+            <div class="info"><div class="fam">Source Sans 3</div><div class="role">Body · UI · labels</div><div class="set">400 · 500 · 600 · 700</div><p class="desc">An institutional, highly legible humanist sans. All body copy, lede, captions, buttons, form labels and dense tables.</p></div>
+          </div>
+          <div class="specimen">
+            <div class="glyph mono">01</div>
+            <div class="info"><div class="fam">Source Code Pro</div><div class="role">Data · tickers · coordinates</div><div class="set">400 · 500 · 600 · tabular</div><p class="desc">The technical register and the brand's precision cue. Tickers (TSXV:EVI), drill values, grades, UTM coordinates, figure captions and table cells.</p></div>
+          </div>
+        </div>
+        <div data-reveal style="margin-top:40px;">
+          <div class="subhead"><span class="n">4.2</span><h3>The scale</h3></div>
+          <div class="scale">
+            <div class="scale-row"><div class="spec"><b>Display</b>Montserrat 800<br>clamp ≤ 68 / -0.02em</div><div class="live"><span class="t-display" style="font-size:54px;">Critical metals.</span></div></div>
+            <div class="scale-row"><div class="spec"><b>H1</b>Montserrat 700<br>≤ 48 / 1.08</div><div class="live"><span class="t-h1">Five projects in Botswana</span></div></div>
+            <div class="scale-row"><div class="spec"><b>H2</b>Montserrat 700<br>≤ 34 / 1.12</div><div class="live"><span class="t-h2">The Matsitama Copper Project</span></div></div>
+            <div class="scale-row"><div class="spec"><b>Lede</b>Source Sans 400<br>19 / 1.6</div><div class="live"><span class="t-lede">A diversified, advanced-stage critical-metals portfolio.</span></div></div>
+            <div class="scale-row"><div class="spec"><b>Body</b>Source Sans 400<br>16 / 1.6</div><div class="live"><span class="t-body">Over 50,000 metres of diamond drilling and 115,000+ soil samples have been completed across the district.</span></div></div>
+            <div class="scale-row"><div class="spec"><b>Eyebrow</b>Source Sans 700<br>12 / 0.16em / caps</div><div class="live"><span class="t-eyebrow">The portfolio</span></div></div>
+            <div class="scale-row"><div class="spec"><b>Data</b>Source Code Pro 500<br>14 / tabular</div><div class="live"><span class="t-data">NAK-25-014 · 42.0m @ 1.83% Cu</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 VOICE ============ -->
+<section class="chapter" id="ch05">
+  <div class="wrap">
+    <div class="ch-head" data-reveal>
+      <div class="ch-folio">05</div>
+      <div class="ch-headmain">
+        <span class="kicker kicker--az">Voice &amp; Tone</span>
+        <h1 class="ch-title">Investor-grade. Specific. Never hype.</h1>
+        <p class="ch-manifesto">We write like a public-company news release crossed with a research note. Confidence comes from evidence and numbers — not adjectives. Sentence case; tickers in mono caps.</p>
+      </div>
+    </div>
+    <div class="ch-body">
+      <div class="span stack" style="--gap:48px;">
+        <div class="lex" data-reveal>
+          <div>
+            <div class="field-label" style="color:var(--azure)">Words we use</div>
+            <div class="words"><span class="w">critical metals</span><span class="w">diversified</span><span class="w">advanced-stage</span><span class="w">resource definition</span><span class="w">disciplined</span><span class="w">aligned</span><span class="w">in-country</span><span class="w">jurisdiction</span><span class="w">oversubscribed</span><span class="w">prospective</span><span class="w">drill-ready</span><span class="w">develop &amp; distribute</span></div>
+          </div>
+          <div>
+            <div class="field-label">Words we avoid</div>
+            <div class="words"><span class="w no">world-class</span><span class="w no">cutting-edge</span><span class="w no">revolutionary</span><span class="w no">game-changer</span><span class="w no">synergy</span><span class="w no">10x</span><span class="w no">moonshot</span><span class="w no">to the moon</span></div>
+            <p class="body" style="font-size:13px;margin-top:18px;">No exclamation marks. No emoji, ever. Avoid superlatives a regulator would flag.</p>
+          </div>
+        </div>
+        <div data-reveal>
+          <div class="subhead"><span class="n">5.2</span><h3>Headlines in register</h3></div>
+          <div class="heads">
+            <p>Five critical metals projects, one disciplined developer.</p>
+            <p>Capital meets <em>discipline</em>.</p>
+            <p>A diversified portfolio in a tier-one jurisdiction.</p>
+          </div>
+        </div>
+        <div class="callout" data-reveal><span class="d"></span><p class="t"><b>Casing &amp; tickers.</b> Sentence case for headlines and CTAs. Title Case is fine for asset names (Matsitama Copper Project, Nakalakwana Hill). Tickers always in mono caps and paired the way the Company writes them: <span class="mono">TSXV:EVI · OTCQB:EVIIF</span>. Units stay precise: <span class="mono">1,845 km² · 50,000 m · CAD $20M · NI 43-101</span>.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 SPACE & ELEVATION ============ -->
+<section class="chapter chapter--tint" id="ch06">
+  <div class="wrap">
+    <div class="ch-head" data-reveal>
+      <div class="ch-folio">06</div>
+      <div class="ch-headmain">
+        <span class="kicker kicker--az">Space &amp; Elevation</span>
+        <h1 class="ch-title">A 4pt grid and a soft, cool shadow.</h1>
+        <p class="ch-manifesto">Rhythm comes from a single spacing scale and generous white space. Radii are crisp and corporate; figures stay 90°. Elevation is two quiet tiers plus the azure CTA glow.</p>
+      </div>
+    </div>
+    <div class="ch-body">
+      <div class="span stack" style="--gap:56px;">
+        <div class="cols-2" data-reveal style="align-items:start;">
+          <div>
+            <div class="subhead"><span class="n">6.1</span><h3>Spacing scale</h3></div>
+            <div class="ladder">
+              <div class="row"><span class="tok">--space-xs</span><span class="bar" style="width:8px"></span><span class="px">8</span></div>
+              <div class="row"><span class="tok">--space-sm</span><span class="bar" style="width:12px"></span><span class="px">12</span></div>
+              <div class="row"><span class="tok">--space-md</span><span class="bar" style="width:16px"></span><span class="px">16</span></div>
+              <div class="row"><span class="tok">--space-lg</span><span class="bar" style="width:24px"></span><span class="px">24</span></div>
+              <div class="row"><span class="tok">--space-xl</span><span class="bar" style="width:32px"></span><span class="px">32</span></div>
+              <div class="row"><span class="tok">--space-2xl</span><span class="bar" style="width:48px"></span><span class="px">48</span></div>
+              <div class="row"><span class="tok">--space-3xl</span><span class="bar" style="width:64px"></span><span class="px">64</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="subhead"><span class="n">6.2</span><h3>Radii</h3></div>
+            <div class="radii">
+              <div class="r"><div class="box" style="border-radius:4px"></div><div class="lab"><b>xs · 4</b><br>tags, badges</div></div>
+              <div class="r"><div class="box" style="border-radius:6px"></div><div class="lab"><b>sm · 6</b><br>buttons, inputs</div></div>
+              <div class="r"><div class="box" style="border-radius:10px"></div><div class="lab"><b>md · 10</b><br>thumbs</div></div>
+              <div class="r"><div class="box" style="border-radius:14px"></div><div class="lab"><b>lg · 14</b><br>cards</div></div>
+              <div class="r"><div class="box" style="border-radius:20px"></div><div class="lab"><b>xl · 20</b><br>media</div></div>
+              <div class="r"><div class="box" style="border-radius:999px;height:80px"></div><div class="lab"><b>pill</b><br>chips</div></div>
+            </div>
+          </div>
+        </div>
+        <div data-reveal>
+          <div class="subhead"><span class="n">6.3</span><h3>Elevation</h3></div>
+          <div class="elev">
+            <div class="e card"><span class="c">--shadow-card · resting</span></div>
+            <div class="e deep"><span class="c">--shadow-deep · hover</span></div>
+            <div class="e az"><span class="c">--shadow-azure · CTA</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 COMPONENTS ============ -->
+<section class="chapter" id="ch07">
+  <div class="wrap">
+    <div class="ch-head" data-reveal>
+      <div class="ch-folio">07</div>
+      <div class="ch-headmain">
+        <span class="kicker kicker--az">Components</span>
+        <h1 class="ch-title">Quiet parts, assembled with rhythm.</h1>
+        <p class="ch-manifesto">The reusable primitives. Navy carries primary actions; Azure marks the one bright CTA. Tickers, commodity tags and KPIs do the numerate work.</p>
+      </div>
+    </div>
+    <div class="ch-body">
+      <div class="span stack" style="--gap:52px;">
+        <div data-reveal>
+          <div class="subhead"><span class="n">7.1</span><h3>Buttons</h3></div>
+          <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;">
+            <button class="btn-primary">Corporate presentation</button>
+            <button class="btn-accent">View the projects →</button>
+            <button class="btn-secondary">Sign up for news</button>
+          </div>
+        </div>
+        <div class="cols-2" data-reveal style="align-items:start;">
+          <div>
+            <div class="subhead"><span class="n">7.2</span><h3>Tickers &amp; badges</h3></div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:18px;">
+              <span class="ticker">TSXV:<b>EVI</b></span>
+              <span class="ticker">OTCQB:<b>EVIIF</b></span>
+            </div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+              <span class="badge navy">Flagship</span>
+              <span class="badge az">OTCQB listed</span>
+              <span class="badge out">NI 43-101</span>
+              <span class="badge news">News</span>
+            </div>
+          </div>
+          <div>
+            <div class="subhead"><span class="n">7.3</span><h3>Commodity tags &amp; stage chips</h3></div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;">
+              <span class="ctag"><span class="dt" style="background:var(--cu)"></span>Cu <span class="cn">Copper</span></span>
+              <span class="ctag"><span class="dt" style="background:var(--ni)"></span>Ni</span>
+              <span class="ctag"><span class="dt" style="background:var(--u)"></span>U</span>
+              <span class="ctag"><span class="dt" style="background:var(--ree)"></span>REE</span>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <span class="stage" style="color:var(--stage-resource);background:color-mix(in srgb,var(--stage-resource) 12%,#fff);border:1px solid color-mix(in srgb,var(--stage-resource) 28%,transparent)"><span class="sd" style="background:var(--stage-resource)"></span>Resource</span>
+              <span class="stage" style="color:var(--stage-drilling);background:color-mix(in srgb,var(--stage-drilling) 12%,#fff);border:1px solid color-mix(in srgb,var(--stage-drilling) 28%,transparent)"><span class="sd" style="background:var(--stage-drilling)"></span>Drilling</span>
+              <span class="stage" style="color:var(--stage-explore);background:color-mix(in srgb,var(--stage-explore) 12%,#fff);border:1px solid color-mix(in srgb,var(--stage-explore) 28%,transparent)"><span class="sd" style="background:var(--stage-explore)"></span>Exploration</span>
+            </div>
+          </div>
+        </div>
+        <div class="cols-2" data-reveal style="align-items:start;">
+          <div>
+            <div class="subhead"><span class="n">7.4</span><h3>Form field</h3></div>
+            <div class="field-input"><label>Work email</label><input placeholder="name@fund.com"></div>
+            <p class="body" style="font-size:13px;margin-top:12px;">Navy/azure focus with a soft azure glow.</p>
+          </div>
+          <div>
+            <div class="subhead"><span class="n">7.5</span><h3>Navigation</h3></div>
+            <div class="navmini">
+              <div class="sp"></div>
+              <div class="bar">
+                <span class="bl"><img src="assets/logos/eastport-mark.png" alt=""><span class="w">EASTPORT</span></span>
+                <span class="lnk"><span class="active">Projects</span><span>About</span><span>Investors</span><span class="cta">Deck</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div data-reveal>
+          <div class="subhead"><span class="n">7.6</span><h3>KPIs &amp; the project index</h3></div>
+          <dl class="kpis">
+            <div><dt>Projects</dt><dd>5</dd></div>
+            <div><dt>Invested</dt><dd>$20<em>M</em></dd></div>
+            <div><dt>Flagship</dt><dd>1,845</dd></div>
+            <div><dt>Experience</dt><dd>100<em>+</em></dd></div>
+          </dl>
+          <div style="margin-top:14px;">
+            <div class="index-row"><span class="n">01</span><div><div class="nm">Matsitama</div><div class="ds">Flagship copper district · resource definition</div></div><span class="ctag"><span class="dt" style="background:var(--cu)"></span>Cu</span><span class="ar">→</span></div>
+            <div class="index-row"><span class="n">02</span><div><div class="nm">Selebi East</div><div class="ds">Nickel-copper-cobalt + PGE · exploration</div></div><span class="ctag"><span class="dt" style="background:var(--ni)"></span>Ni</span><span class="ar">→</span></div>
+            <div class="index-row"><span class="n">03</span><div><div class="nm">Foley</div><div class="ds">Uranium, north of Letlhakane · exploration</div></div><span class="ctag"><span class="dt" style="background:var(--u)"></span>U</span><span class="ar">→</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08 REVERSED / DATA UI ============ -->
+<section class="chapter chapter--dark" id="ch08">
+  <div class="wrap">
+    <div class="ch-head" data-reveal>
+      <div class="ch-folio">08</div>
+      <div class="ch-headmain">
+        <span class="kicker kicker--az">Reversed &amp; Data UI</span>
+        <h1 class="ch-title">The system on Navy.</h1>
+        <p class="ch-manifesto">For heroes, footers, presentation slides and data-dense product views, the system inverts onto Navy. White space becomes deep field; Source Code Pro carries the data; Sky and Azure light the highlights.</p>
+      </div>
+    </div>
+    <div class="ch-body">
+      <div class="span stack" style="--gap:40px;">
+        <div class="reverse" data-reveal>
+          <span class="kicker" style="color:var(--sky)">Reversed CTA</span>
+          <div class="rt">Review the corporate presentation.</div>
+          <p class="rb">The full thesis — portfolio, geology, share structure and the 2026 plan — in one investor-grade deck.</p>
+          <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;">
+            <button class="btn-q">Corporate presentation</button>
+            <span class="ticker" style="background:transparent;border-color:rgba(255,255,255,0.24);color:#fff;">TSXV:<b>EVI</b></span>
+          </div>
+        </div>
+        <div class="reverse" data-reveal>
+          <span class="kicker" style="color:var(--sky)">Data table — Source Code Pro</span>
+          <table class="dtable" style="margin-top:16px;">
+            <thead><tr><th>Hole</th><th>Interval</th><th>Grade</th><th>Metal</th></tr></thead>
+            <tbody>
+              <tr><td class="m">NAK-25-014</td><td class="m">42.0 m</td><td class="m"><b>1.83%</b></td><td>Cu</td></tr>
+              <tr><td class="m">NAK-25-011</td><td class="m">28.4 m</td><td class="m"><b>1.21%</b></td><td>Cu</td></tr>
+              <tr><td class="m">NAK-25-006</td><td class="m">19.7 m</td><td class="m"><b>2.07%</b></td><td>Cu</td></tr>
+            </tbody>
+          </table>
+          <p class="rb" style="font-size:12px;margin-top:12px;font-family:var(--font-mono);">Illustrative — replace with NI 43-101 disclosed data.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 09 MOTION & MOMENTS ============ -->
+<section class="chapter" id="ch09">
+  <div class="wrap">
+    <div class="ch-head" data-reveal>
+      <div class="ch-folio">09</div>
+      <div class="ch-headmain">
+        <span class="kicker kicker--az">Motion &amp; Moments</span>
+        <h1 class="ch-title">Atmosphere, not decoration.</h1>
+        <p class="ch-manifesto">Two signature motifs — the radiating fan and the spectrum rule — used sparingly and quietly. Motion is calm and functional: short ease-out fades, a settling press, no bounce.</p>
+      </div>
+    </div>
+    <div class="ch-body">
+      <div class="span stack" style="--gap:40px;">
+        <div class="cols-2" data-reveal>
+          <div class="moment">
+            <div class="stage"><canvas id="rayCanvas"></canvas></div>
+            <div class="meta"><h4>The dawn fan</h4><p>An oversized, low-opacity mark behind a hero or section header — monochrome blue, subtle, never loud.</p></div>
+          </div>
+          <div class="moment">
+            <div class="stage" style="display:flex;align-items:center;justify-content:center;">
+              <div style="width:78%;height:8px;border-radius:999px;background:linear-gradient(90deg,var(--navy),var(--marine) 32%,var(--azure) 58%,var(--sky) 80%,var(--mist));"></div>
+            </div>
+            <div class="meta"><h4>The spectrum rule</h4><p>The 5-blue gradient as a 2–6px line — under the nav, atop the footer, capping a hero. The one decorative flourish.</p></div>
+          </div>
+        </div>
+        <div class="cols-2" data-reveal>
+          <div class="dd do"><div class="h">Do</div><div class="b">Fade and rise content 6–10px on entry. Lift cards −4px into the deep shadow on hover. Keep durations 0.16–0.4s, ease-out. Gate everything behind <span class="mono">prefers-reduced-motion</span>.</div></div>
+          <div class="dd dont"><div class="h">Don't</div><div class="b">No bounce, spring or overshoot. No infinite looping decoration on content. Never animate the logo's blades apart. Never let motion delay the data an investor came for.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10 ACCESSIBILITY ============ -->
+<section class="chapter chapter--tint" id="ch10">
+  <div class="wrap">
+    <div class="ch-head" data-reveal>
+      <div class="ch-folio">10</div>
+      <div class="ch-headmain">
+        <span class="kicker kicker--az">Accessibility</span>
+        <h1 class="ch-title">Legible to everyone, by default.</h1>
+        <p class="ch-manifesto">Contrast, focus and reduced motion are part of the system, not an afterthought — fitting for a public company that answers to scrutiny.</p>
+      </div>
+    </div>
+    <div class="ch-body">
+      <div class="span stack" style="--gap:40px;">
+        <div data-reveal>
+          <div class="subhead"><span class="n">10.1</span><h3>Contrast pairings</h3></div>
+          <div class="pairs">
+            <div class="pair" style="background:var(--navy);color:#fff"><div class="big">Aa</div><div class="sm" style="color:rgba(220,231,245,0.8)">White on Navy</div><div class="ratio-no"><span class="ok">●</span> 14.2:1 · AAA</div></div>
+            <div class="pair" style="background:#fff;color:var(--navy)"><div class="big">Aa</div><div class="sm" style="color:var(--slate)">Navy on White</div><div class="ratio-no"><span class="ok">●</span> 14.2:1 · AAA</div></div>
+            <div class="pair" style="background:#fff;color:var(--slate)"><div class="big">Aa</div><div class="sm">Slate body on White</div><div class="ratio-no"><span class="ok">●</span> 8.1:1 · AAA</div></div>
+            <div class="pair" style="background:#fff;color:var(--azure)"><div class="big">Aa</div><div class="sm" style="color:var(--steel)">Azure link on White</div><div class="ratio-no"><span class="ok">●</span> 4.6:1 · AA</div></div>
+          </div>
+        </div>
+        <div class="a11y-grid" data-reveal>
+          <div class="a11y"><h4>Focus</h4><p>A 2px Azure outline at 2px offset on every interactive element; form fields add a 3px azure glow. Never remove focus styles.</p></div>
+          <div class="a11y"><h4>Reduced motion</h4><p>All reveals, the cover rays and the scroll cue collapse to static under <span class="mono">prefers-reduced-motion: reduce</span>.</p></div>
+          <div class="a11y"><h4>Muted text floor</h4><p>Mute <span class="mono">#93A0B0</span> is the lightest text allowed on white — and only for meta. Never use Line or Mist as text.</p></div>
+          <div class="a11y"><h4>Don't rely on color</h4><p>Commodity and stage are always paired with a label, never color alone — so a legend reads without hue.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COLOPHON ============ -->
+<footer class="colophon" id="colophon">
+  <img class="colophon-fan" src="assets/logos/eastport-mark-white.png" alt="">
+  <div class="wrap">
+    <img class="ast" src="assets/logos/eastport-mark-white.png" alt="">
+    <p class="big">One system, rigorously applied, so capital meets <em>clarity</em>.</p>
+    <div class="colophon-grid">
+      <div><div class="k">System</div><div class="v">Navy · Azure · the blue spectrum<br>Cool neutrals · commodity palette</div></div>
+      <div><div class="k">Typefaces</div><div class="v">Montserrat — display<br>Source Sans 3 — body / UI<br>Source Code Pro — data</div></div>
+      <div><div class="k">Custody</div><div class="v">Eastport Critical Metals Corp.<br>Vancouver, BC · Gaborone<br>TSXV:EVI · OTCQB:EVIIF</div></div>
+    </div>
+    <div class="colophon-bot">
+      <span>© 2026 Eastport Critical Metals Corp.</span>
+      <span>Brand &amp; Visual System · v1 · June 2026</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast">Copied <b id="toastHex">#000</b></div>
+
+<script>
+  document.body.classList.add('has-js');
+
+  /* scroll progress + active folio */
+  const progress = document.getElementById('progress');
+  const chapters = [...document.querySelectorAll('.chapter')];
+  const folios = [...document.querySelectorAll('.folios a')];
+  function onScroll(){
+    const h = document.documentElement;
+    const sc = h.scrollTop / (h.scrollHeight - h.clientHeight);
+    progress.style.width = (sc*100).toFixed(2) + '%';
+    let active = -1;
+    chapters.forEach((c,i)=>{ if(c.getBoundingClientRect().top < window.innerHeight*0.4) active = i; });
+    folios.forEach((f,i)=> f.classList.toggle('active', i===active));
+  }
+  document.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* reveal */
+  const io = new IntersectionObserver((ents)=>{
+    ents.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, {threshold:0.12});
+  const reveals = [...document.querySelectorAll('[data-reveal]')];
+  reveals.forEach(el=>io.observe(el));
+  /* reveal anything already on-screen at load (e.g. deep-linked anchors) */
+  requestAnimationFrame(()=>{
+    reveals.forEach(el=>{ const r=el.getBoundingClientRect(); if(r.top < window.innerHeight && r.bottom > 0){ el.classList.add('in'); io.unobserve(el);} });
+  });
+  /* failsafe — SNAP any still-hidden element to visible without a transition
+     (starting a transition on never-painted off-screen nodes freezes them at 0) */
+  setTimeout(()=>reveals.forEach(el=>{ if(!el.classList.contains('in')) el.classList.add('shown'); }), 1200);
+  if(!('IntersectionObserver' in window)) reveals.forEach(el=>el.classList.add('shown'));
+
+  /* copy to clipboard */
+  const toast = document.getElementById('toast'), toastHex = document.getElementById('toastHex');
+  let toastT;
+  document.querySelectorAll('.copyable').forEach(el=>{
+    el.addEventListener('click', ()=>{
+      const hex = el.getAttribute('data-copy');
+      if(!hex) return;
+      navigator.clipboard && navigator.clipboard.writeText(hex);
+      toastHex.textContent = hex;
+      toast.classList.add('show');
+      clearTimeout(toastT);
+      toastT = setTimeout(()=>toast.classList.remove('show'), 1400);
+    });
+  });
+
+  /* cover + moment ray canvas — radiating dawn fan, calm shimmer */
+  function rays(canvas, opts){
+    if(!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const cols = ['#1140AA','#156AF8','#68ABFC','#B9D8FD'];
+    let raf, t=0, W, H, DPR;
+    function size(){ DPR=Math.min(devicePixelRatio||1,2); W=canvas.clientWidth; H=canvas.clientHeight; canvas.width=W*DPR; canvas.height=H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0); }
+    size();
+    const ox = opts.ox*1, oy = opts.oy*1;
+    const N = opts.n || 11;
+    function draw(){
+      ctx.clearRect(0,0,W,H);
+      const cx = W*ox, cy = H*oy;
+      const baseLen = Math.hypot(W,H)*1.1;
+      for(let i=0;i<N;i++){
+        const a0 = opts.a0, a1 = opts.a1;
+        const a = a0 + (a1-a0)*(i/(N-1));
+        const shimmer = reduce?0:Math.sin(t*0.6 + i*0.5)*0.012;
+        const ang = a + shimmer;
+        const w = (opts.w || 0.05) + Math.sin(t*0.4+i)*0.004;
+        ctx.beginPath();
+        ctx.moveTo(cx,cy);
+        ctx.lineTo(cx+Math.cos(ang-w)*baseLen, cy+Math.sin(ang-w)*baseLen);
+        ctx.lineTo(cx+Math.cos(ang+w)*baseLen, cy+Math.sin(ang+w)*baseLen);
+        ctx.closePath();
+        ctx.fillStyle = cols[i%cols.length];
+        ctx.globalAlpha = (opts.alpha||0.06) * (0.6 + 0.4*Math.sin(t*0.5+i));
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+      t += 0.012;
+      if(!reduce) raf = requestAnimationFrame(draw);
+    }
+    draw();
+    addEventListener('resize', ()=>{ size(); if(reduce) draw(); });
+  }
+  rays(document.getElementById('coverCanvas'), {ox:0.16, oy:1.05, a0:-1.95, a1:-0.55, n:13, w:0.05, alpha:0.05});
+  rays(document.getElementById('rayCanvas'),  {ox:0.12, oy:1.1,  a0:-1.95, a1:-0.4,  n:11, w:0.055, alpha:0.10});
+</script>
+</body>
+</html>
